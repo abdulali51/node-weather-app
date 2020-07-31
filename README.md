@@ -2,6 +2,8 @@
 
 A web application with Node.js as backend for forecasting weather based on the input provided by the user.
 
+[Live Preview](https://abd-weather-application.herokuapp.com/)
+
 ---
 ## Requirements
 
@@ -10,7 +12,7 @@ For development, you will only need Node.js and a node global package.
 ### Node
 - #### Node installation
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer based on your operating system.
+  Just go on official website of [Node.js](https://nodejs.org/) and download the installer based on your operating system.
 
 If the installation was successful, you should be able to run the following command.
 
