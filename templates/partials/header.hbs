@@ -1,9 +1,9 @@
 <header>
   <nav>
-    <a href="/">Weather</a>
-    <a href="/about">About</a>
-    <a href="/help">Help</a>
+    <a href="/" {{#if isIndex}}class="active"{{/if}}>Weather</a>
+    <a href="/about" {{#if isAbout}}class="active"{{/if}}>About</a>
+    <a href="/help" {{#if isHelp}}class="active"{{/if}}>Help</a>
   </nav>
 
-  <h1>{{title}}</h1>
+  <h1 class="mr-2">{{title}}</h1>
 </header>

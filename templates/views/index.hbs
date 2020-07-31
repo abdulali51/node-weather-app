@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
+  <title>Weather | Home</title>
   <link rel="icon" href="/img/weather.png">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -14,16 +14,16 @@
   <div class="main-content">
     {{>header}}
 
-    <p>Use this site to know your weather!</p>
+    <h3>Use this site to know your weather!</h3>
 
-    <form>
-      <input type="text" name="location" id="location" placeholder="Location">
+    <form class="mr-2">
+      <input type="text" name="location" id="location" placeholder="Search a location...">
       <button type="submit">Search</button>
     </form>
 
-    <p id="msg-1"></p>
+    <p class="mr-2" id="msg"></p>
 
-    <p id="msg-2"></p>
+    <div class="mr-2" id="forecast-content"></div>
 
   </div>
 

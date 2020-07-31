@@ -1,34 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900);
+
 body {
   color: #333333;
-  font-family: arial;
+  font-family: 'Nunito', arial;
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
-
   display: flex;
   flex-direction: column;
-  min-height: 100vh
+  min-height: 100vh;
+  background: #5433FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .main-content {
   flex-grow: 1;
+  background-color: #ebf2f6;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.main-content .mr-2 {
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 footer {
-  color: #888888;
+  color: #eeeeee;
   border-top: 1px solid #eeeeee;
   margin-top: 16px;
   padding: 16px 0;
 }
 
 header {
-  margin-top: 16px;
   margin-bottom: 48px;
 }
 
+nav {
+  background-color: #d7e1ec;
+  padding: 1rem;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
 h1 {
-  font-size: 64px;
+  font-size: 38px;
   margin-bottom: 16px;
+  color: #3EADCF;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 1rem 3rem;
 }
 
 header a {
@@ -37,21 +64,148 @@ header a {
   text-decoration: none;
 }
 
+header a.active {
+  color: white;
+  background: darkgray;
+  padding: 1rem;
+}
+
 .portrait {
   width: 250px;
 }
 
+form {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
 input {
   border: 1px solid #cccccc;
-  border-radius: 5px;
-  padding: 8px;
+  border-radius: 20px;
+  padding: 14px;
   margin-right: 10px;
+  width: 92%;
 }
 
 button {
+  position: absolute;
+  top: 5px;
+  right: 18px;
   border: 1px solid #888888;
-  border-radius: 5px;
+  border-radius: 20px;
   background: #888888;
   color: #ffffff;
-  padding: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.weather-card {
+  margin: 20px 5px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+  -webkit-animation: appear 500ms ease-out forwards;
+  animation: appear 500ms ease-out forwards;
+}
+
+@keyframes appear {
+  0% {
+    transform:scale(0);
+  }
+  50% {
+    transform:scale(1.05)
+  }
+  75% {
+    transform:scale(0.95)
+  }
+  100% {
+   transform:scale(1)
+  }
+}
+
+.weather-card h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 80px;
+  color: #B8B8B8;
+  margin: 20px 0 0 35px;
+}
+
+.weather-card p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #d2d2d2;
+  margin: 0 0 0 35px;
+}
+
+.weather-icon {
+  width: 150px;
+  float: right;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.weather-icon span {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  color: #d2d2d2;
+}
+
+.weather-icon img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  -webkit-animation: weather-icon-move 5s ease-in-out infinite;
+  animation: weather-icon-move 5s ease-in-out infinite;
+}
+
+@keyframes weather-icon-move {
+	50% {
+    transform: translateY(-8px);
+  }
+}
+
+.weather-details {
+  clear: both;
+  margin: 35px 0 35px 35px;
+}
+
+.weather-details p {
+  font-family: 'Nunito', arial;
+  font-weight: 100;
+  font-size: 18px;
+  color: #888888;
+  margin: 0 0 0 35px;
+  letter-spacing: 2px;
+}
+
+.w-icons {
+  margin-right: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.w-icons img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.weather-location {
+  background: #20BDFF;
+  padding: 20px;
+  color: #eeeeee;
+}
+
+.weather-location img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 5px;
 }

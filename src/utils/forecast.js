@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, callback) => {
       callback('Location not found.');
     } else {
       const data = body.current;
-      callback(undefined, `It is currently ${data.temperature} degrees out. It feels like ${data.feelslike} degrees out.`);
+      callback(undefined, data);
     }
   });
 };

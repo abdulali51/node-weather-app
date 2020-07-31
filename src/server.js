@@ -22,15 +22,17 @@ app.use(express.static(publicDirPath));
 
 app.get('', (req, res) => {
   res.render('index', {
-    title: 'Weather',
-    name: 'Abdul Kader Patanwala (AKP)'
+    title: 'Weather Forecast',
+    name: 'Abdul Kader Patanwala',
+    isIndex: true,
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About Me',
-    name: 'Abdul Kader Patanwala (AKP)'
+    name: 'Abdul Kader Patanwala',
+    isAbout: true
   });
 });
 
@@ -38,7 +40,8 @@ app.get('/help', (req, res) => {
   res.render('help', {
     helpText: 'This is some helpful text.',
     title: 'Help',
-    name: 'Abdul Kader Patanwala (AKP)'
+    name: 'Abdul Kader Patanwala',
+    isHelp: true
   });
 });
 
@@ -61,8 +64,6 @@ app.get('/weather', (req, res) => {
         return res.send({ error });
       }
 
-      console.log(location);
-      console.log(forecastData);
       res.send({
         forecast: forecastData,
         location,
@@ -71,22 +72,12 @@ app.get('/weather', (req, res) => {
     });
   });
 
-  /* if (!req.query.address) {
-    return res.send({
-      error: 'You must provide an address.'
-    });
-  }
-  res.send({
-    forecast: 'It is raining',
-    location: 'Pune',
-    address: req.query.address
-  }); */
 });
 
 app.get('/help/*', (req, res) => {
   res.render('404', {
     title: '404',
-    name: 'Abdul Kader Patanwala (AKP)',
+    name: 'Abdul Kader Patanwala',
     errorMessage: 'Help article not found.'
   })
 });
@@ -94,7 +85,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
   res.render('404', {
     title: '404',
-    name: 'Abdul Kader Patanwala (AKP)',
+    name: 'Abdul Kader Patanwala',
     errorMessage: 'Page not found.'
   })
 });
